@@ -1,2 +1,8 @@
-# simple-nodejs-web
-A simple nodejs web server
+一个极简的仿MVC的nodejs服务端框架
+http.js是入口文件
+router.js是路由文件
+control文件夹里面的文件负责处理业务逻辑
+data文件夹里面包含config和db两个文件，config保存一些配置信息，db文件负责数据库相关的操作
+core文件夹用于定义一些通用方法
+static文件夹用于放置前端页面使用到的静态文件
+view文件夹存放html文件

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<!-- Apple devices fullscreen -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<!-- Apple devices fullscreen -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- UC强制全屏 -->
+	<meta name="full-screen" content="yes">
+	<!-- QQ强制全屏 -->
+	<meta name="x5-fullscreen" content="true">
+	<title>客服</title>
+	<style type="text/css">
+	.nt-ui-chat-min-btn {display: none !important;}
+	</style>
+</head>
+
+<body>	
+	<div class="member-info">获取用户信息</div>
+	<div class="log">写入log数据</div>
+	<div class="log-all">批量写入log数据</div>
+<script src="/js/jquery.js"></script>
+<script type="text/javascript">
+	$('.member-info').click(function() {
+		$.ajax({
+			type:'get',
+			url:'http://localhost:8080/user',
+			data:{},
+			dataType:'json',
+			success:function(res) {
+				console.log(res);
+			}
+		});
+	});
+	$('.log').click(function() {
+		$.ajax({
+			type:'get',
+			url:'http://localhost:8080/log',
+			data:{log:'first write', member_id:2},
+			dataType:'json',
+			success:function(res) {
+				console.log(res);
+			}
+		});
+	});
+	$('.log-all').click(function() {
+		$.ajax({
+			type:'get',
+			url:'http://localhost:8080/logAll',
+			data:{log:'first write', member_id:2},
+			dataType:'json',
+			success:function(res) {
+				console.log(res);
+			}
+		});
+	});
+</script>
+</body>
+</html>
